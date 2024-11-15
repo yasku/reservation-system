@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Bar Makario</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-whateverHash" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #e0e0e0;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            background-color: #343a40;
+            padding: 15px;
+            border-radius: 15px;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .nav a:hover {
+            background-color: #495057;
+            border-radius: 5px;
+        }
+
+        .hero-section {
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .hero-section h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            animation: bounceIn 2s;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        .btn-reserve {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn-reserve:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes bounceIn {
+            from, 20%, 40%, 60%, 80%, to {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="inicio.html">Inicio</a>
+        <a href="reservas.html">Reservas</a>
+        <a href="contacto.html">Contacto</a>
+    </div>
+    <div class="hero-section">
+        <h1>Bienvenidos a Bar Makario</h1>
+        <p>Disfruta de la mejor experiencia en nuestro bar. Haz tu reserva y asegúrate de tener tu mesa lista para tu próxima visita.</p>
+        <a href="reservas.html" class="btn-reserve">Haz tu Reserva</a>
+    </div>
+</body>
+</html>

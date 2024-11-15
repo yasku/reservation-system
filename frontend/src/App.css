@@ -1,0 +1,54 @@
+body {
+  background: #d3d3d3;
+  background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png'); /* Cement-like pattern */
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1.animated-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 2s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+button, input, select, textarea {
+  border-radius: 8px;
+  margin-top: 5px;
+}
+
+button:hover {
+  animation: pulse 0.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.05);
+  }
+}
+
+.navbar-brand, .nav-link {
+  font-size: 1.2rem;
+  color: #ddd !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #fff !important;
+}
