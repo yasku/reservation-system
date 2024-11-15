@@ -34,4 +34,52 @@ body {
 
 .time-slots {
     display: flex;
+    justify-content: center; /* Center align the time buttons */
+    gap: 10px; /* Space between buttons */
+}
+
+.time-slot-btn {
+    background-color: #007bff; /* Same color as the "Reservar" button */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 10px 20px; /* Some padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make the buttons appear side by side */
+    font-size: 14px; /* Font size */
+    margin: 4px 2px; /* Some margin */
+    cursor: pointer; /* Pointer/hand icon */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.time-slot-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.time-slot-btn.active {
+    background-color: #004085; /* Even darker blue for active state */
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align the form elements */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Blue background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 10px 20px; /* Some padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make the buttons appear side by side */
+    font-size: 14px; /* Font size */
+    margin: 4px 2px; /* Some margin */
+    cursor: pointer; /* Pointer/hand icon */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker blue on hover */
 }

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './ReservationForm.css';  // Import CSS for styling
+import './ReservationForm.css';
 
-function ReservationForm() {
+const ReservationForm = () => {
     const [customerName, setCustomerName] = useState('');
     const [customerEmail, setCustomerEmail] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
@@ -10,16 +10,8 @@ function ReservationForm() {
     const [guestsCount, setGuestsCount] = useState(1);
     const [selectedTimeSlot, setSelectedTimeSlot] = useState(null);
 
-    const incrementGuests = () => {
-        setGuestsCount(prev => prev + 1);
-    };
-
-    const decrementGuests = () => {
-        setGuestsCount(prev => (prev > 1 ? prev - 1 : 1));
-    };
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    const handleSubmit = (e) => {
+        e.preventDefault();
         if (!customerName || !customerEmail || !phoneNumber || !reservationDate || !selectedTimeSlot) {
             alert('Por favor complete todos los campos requeridos.');
             return;
@@ -46,11 +38,14 @@ function ReservationForm() {
         });
     };
 
+    const incrementGuests = () => setGuestsCount(guestsCount + 1);
+    const decrementGuests = () => setGuestsCount(guestsCount > 1 ? guestsCount - 1 : 1);
+
     return (
         <div className="form-container rounded bg-white shadow animate__animated animate__fadeIn">
             <div className="header mb-3 text-center">
-                <h3 className="animated-title">Hacer una Reserva</h3>
-                <p className="subtitle">Bar Makario</p>
+                <h3 className="animated-title">Realiza aqui tu reserva:</h3>
+                <p className="subtitle">Las reservas se confirman via email o telefono. En caso de no recibir confirmacion, comunicate a nuestro WhatsApp.</p>
             </div>
             <form onSubmit={handleSubmit}>
                 <div className="form-section">
@@ -89,13 +84,11 @@ function ReservationForm() {
                     </div>
                 </div>
                 <div className="form-section">
-                    <label className="form-label">Fecha de la Reserva</label>
-                    <input type="date" className="form-control" value={reservationDate} onChange={(e) => setReservationDate(e.target.value)} required />
+                    <button type="submit" className="btn btn-primary">Reservar</button>
                 </div>
-                <button type="submit" className="btn btn-primary w-100 mt-3 animated-button">Reservar Mesa</button>
             </form>
         </div>
     );
-}
+};
 
 export default ReservationForm;
