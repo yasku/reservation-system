@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './ReservationForm.css';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 const ReservationForm = () => {
     const [customerName, setCustomerName] = useState('');
@@ -16,7 +18,7 @@ const ReservationForm = () => {
             alert('Por favor complete todos los campos requeridos.');
             return;
         }
-        axios.post('http://localhost:8000/api/reservas/', {
+        axios.post('http://localhost:8000/api/reservations/', {
             customer_name: customerName,
             customer_email: customerEmail,
             phone_number: phoneNumber,
@@ -59,6 +61,17 @@ const ReservationForm = () => {
                 <div className="form-section">
                     <label className="form-label">Número de Teléfono</label>
                     <input type="text" className="form-control" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} required />
+                </div>
+                <div className="form-section">
+                    <label className="form-label">Fecha de Reserva</label>
+                    <DatePicker
+                        selected={reservationDate}
+                        onChange={(date) => setReservationDate(date)}
+                        dateFormat="dd/MM/yyyy"
+                        className="form-control"
+                        placeholderText="Selecciona una fecha"
+                        required
+                    />
                 </div>
                 <div className="form-section">
                     <label className="form-label">¿Cuántas personas?</label>

@@ -7,4 +7,5 @@ class Reservation(models.Model):
     reservation_date = models.DateTimeField()
     guests_count = models.PositiveIntegerField()
     special_request = models.TextField(blank=True, null=True)
+    time_slot = models.CharField(max_length=10)
     
